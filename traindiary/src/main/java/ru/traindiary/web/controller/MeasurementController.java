@@ -1,13 +1,10 @@
 package ru.traindiary.web.controller;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -29,9 +26,9 @@ public class MeasurementController {
 	@Autowired
 	private UserService userService;
  
-	@RequestMapping(value = "user/measurement/add")
-	public @ResponseBody Map<String, Object> addMeasurement(@RequestBody String data){
-		
+	@RequestMapping(value = "user/measurement/weight/add")
+	public @ResponseBody Map<String, Object> addMeasurementWeight(@RequestBody String data){
+			
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -45,7 +42,7 @@ public class MeasurementController {
 			
 			logger.info(measurement);
 			
-			userService.addMeasurement(measurement);
+			userService.addWeightMeasurement(measurement);
 		
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -57,8 +54,8 @@ public class MeasurementController {
 		return map;
 	}
 	
-	@RequestMapping(value = "user/measurement/update")
-	public @ResponseBody Map<String, Object> updateMeasurement(@RequestBody String data){
+	@RequestMapping(value = "user/measurement/weight/update")
+	public @ResponseBody Map<String, Object> updateMeasurementWeight(@RequestBody String data){
 	
 		ObjectMapper objectMapper = new ObjectMapper();
 		
@@ -67,7 +64,7 @@ public class MeasurementController {
 		try {
 			
 			Measurement measurement = objectMapper.readValue(data, Measurement.class);
-			userService.updateMeasurement(measurement);
+			userService.updateWeightMeasurement(measurement);
 			
 			logger.info(measurement);
 		
@@ -81,19 +78,19 @@ public class MeasurementController {
 		return map;
 	}
 	
-	@RequestMapping(value = "user/measurement/read", method = RequestMethod.GET)
-	public @ResponseBody Map<String, Object> readMeasurement(){
+	@RequestMapping(value = "user/measurement/weight/read", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Object> readMeasurementWeight(){
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-		List<Measurement> measurement = userService.getAllMeasurement(auth.getName());
+		List<Measurement> measurementWeight = userService.getAllWeightMeasurement(auth.getName());
 		
-		logger.info(measurement);
+		logger.info(measurementWeight);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("success", true);
-		map.put("measurement", measurement);
+		map.put("weight", measurementWeight);
 		
 		return map;
 		

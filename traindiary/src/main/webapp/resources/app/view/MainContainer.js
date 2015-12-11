@@ -43,25 +43,7 @@ Ext.define('app.view.MainContainer', {
         html: 'Куча аналитики по тренировкам и питанию, графики для наглядного  отображения прогресса и выгрузки отчетов'
     }, 
     	{xtype: 'settings'}
-    /*	{
-        title: 'Настройки',
-        layout: {
-	        type: 'vbox',
-	        pack: 'start',
-	        align: 'stretch'
-	    },
-	    bodyPadding: 10,
-	    defaults: {
-	        frame: true,
-	        margin: '0 0 10 0',
-	        bodyPadding: 10
-	    },
-	    items:[
-	    	{xtype: 'personData'},
-	    	{xtype: 'changePassword'}
-	    	
-	    ]
-    }*/],
+    ],
      header: {
         itemPosition: 1, // after title before collapse tool
         items: [{

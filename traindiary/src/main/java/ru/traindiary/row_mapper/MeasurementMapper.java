@@ -12,21 +12,13 @@ public class MeasurementMapper implements RowMapper<Measurement> {
 
 	@Override
 	public Measurement mapRow(ResultSet rs, int rowNum) throws SQLException {
+		
 		Measurement measurement = new Measurement();
-		measurement.setMeasurementId(new BigInteger(rs.getString("MEASUREMENTID")));
+		measurement.setId(new BigInteger(rs.getString("ID")));
+		measurement.setBodyPartId(new BigInteger(rs.getString("BODYPARTID")));
 		measurement.setUsername(rs.getString("USERNAME"));
 		measurement.setDate(rs.getDate("DATE"));
-		measurement.setWeight(rs.getDouble("WEIGHT"));
-		measurement.setNeck(rs.getDouble("NECK"));
-		measurement.setChest(rs.getDouble("CHEST"));
-		measurement.setWaist(rs.getDouble("WAIST"));
-		measurement.setButtocks(rs.getDouble("BUTTOCKS"));
-		measurement.setHip(rs.getDouble("HIP"));
-		measurement.setCavair(rs.getDouble("CAVIAR"));
-		measurement.setPelvis(rs.getDouble("PELVIS"));
-		measurement.setBiceps(rs.getDouble("BICEPS"));
-		measurement.setForearm(rs.getDouble("FOREARM"));
-		measurement.setShoulders(rs.getDouble("SHOULDERS"));
+		measurement.setVal(rs.getDouble("VAL"));
 		
 		return measurement;
 	}

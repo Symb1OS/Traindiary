@@ -1,18 +1,17 @@
 package ru.traindiary.dao;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import ru.traindiary.model.Measurement;
 
 public interface MeasurementImpl {
 	
-	public Measurement getMeasurement(BigInteger id);
+	public List<Measurement> getAllWeightMeasurement(String username);
 	
-	public List<Measurement> getAllMeasurement(String username);
+	public void addWeightMeasurement(Measurement measurement);
 	
-	public void updateMeasurement(Measurement measurement);
+	public void updateWeightMeasurement(Measurement measurement);
 	
-	public void addMeasurement(Measurement measurement);
+
 	
 }

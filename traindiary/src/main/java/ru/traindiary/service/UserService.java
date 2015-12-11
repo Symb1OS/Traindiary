@@ -19,10 +19,13 @@ public class UserService {
 
 	@Autowired
 	private UserDao userDao;
+	
 	@Autowired
 	private UserRolesDao userRolesDao;
+	
 	@Autowired
 	private ProfileDao profileDao;
+	
 	@Autowired
 	private MeasurementDao measurementDao;
 	
@@ -99,18 +102,21 @@ public class UserService {
 		userDao.changePassword(user);
 	}
 	
+
 	/** ---------	 Measurement ----------	*/
 	
-	public List<Measurement> getAllMeasurement(String username){
-		return measurementDao.getAllMeasurement(username);
+	public List<Measurement> getAllWeightMeasurement(String username) {
+		return 	measurementDao.getAllWeightMeasurement(username);
 	}
-	
-	public void addMeasurement(Measurement measurement){
-		measurementDao.addMeasurement(measurement);
+
+	public void addWeightMeasurement(Measurement measurement) {
+		measurementDao.addWeightMeasurement(measurement);
+		
 	}
-	
-	public void updateMeasurement(Measurement measurement){
-		 measurementDao.updateMeasurement(measurement);
+
+	public void updateWeightMeasurement(Measurement measurement) {
+		measurementDao.updateWeightMeasurement(measurement);
+		
 	}
 	
 }

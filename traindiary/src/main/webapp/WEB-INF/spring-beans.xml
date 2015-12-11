@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="loginSuccessHandler" class="ru.traindiary.web.security.LoginSuccessHandler">
+	</bean>
+	
+	<bean id="loginFailureHandler" class="ru.traindiary.web.security.LoginFailureHandler">
+	</bean>
+
+</beans>

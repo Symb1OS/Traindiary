@@ -2,7 +2,8 @@ Ext.define('app.view.MeasurementsContainer', {
     extend: 'Ext.form.Panel',
     alias: 'widget.measurements',
     requires: [
-    	'app.view.MeasurementWeightContainer'
+    	'app.view.MeasurementWeightContainer',
+    	'app.view.MeasurementNeckContainer'
     ],
 	
     title: 'Замеры',
@@ -15,7 +16,7 @@ Ext.define('app.view.MeasurementsContainer', {
     },
     items:[
     	{xtype: 'measurement-weight'},
-    	{title: 'Шея'},
+    	{xtype: 'measurement-neck'},
     	{title: 'Грудь'},
     	{title: 'Талия'},
     	{title: 'Ягодицы'},

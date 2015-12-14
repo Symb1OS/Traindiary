@@ -6,7 +6,7 @@ Ext.define('app.view.MeasurementNeckContainer', {
     	  	 'app.view.MeasurementDataNeck',
     	  	 'app.controller.MeasurementDataNeckController'
     ],
-    controller: 'measurement-data-neck',
+    controller: 'measurement-neck',
     
     title: 'Шея',
     layout: 'border',

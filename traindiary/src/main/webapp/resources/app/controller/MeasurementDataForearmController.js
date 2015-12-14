@@ -1,9 +1,8 @@
- Ext.define('app.controller.MeasurementDataNeckController', {
+Ext.define('app.controller.MeasurementDataForearmController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.measurement-neck',
-
- 	onSave : function(){
+    alias: 'controller.measurement-forearm',
     
+    onSave : function(){
 	  	 var form = this.getView().getForm()
 		 var rec = form.getRecord()
 		 var newValues = form.getValues()	
@@ -18,8 +17,8 @@
 		 for (var i = 0; i < keys.length; i++) {
 		     rec.set(keys[i], newValues[keys[i]]);
 		 }
-		 
-		 var grid = Ext.getCmp('measurementNeckGrid');
+		  
+		 var grid = Ext.getCmp('measurementForearmGrid');
 		 var store = grid.getStore()
 
 		 store.sync({
@@ -34,5 +33,5 @@
     	var form = this.getView().getForm()
 		form.loadRecord(rec)
     }
-    
+
 })

@@ -4,7 +4,7 @@ Ext.define('app.view.MeasurementWeightContainer', {
     requires: [
     	  	 'app.view.MeasurementGridWeight',
     	  	 'app.view.MeasurementDataWeight',
-    	  	 'app.controller.MeasurementWeightController'
+    	  	 'app.controller.MeasurementDataWeightController'
     ],
     controller: 'measurement-weight',
     

@@ -3,7 +3,16 @@ Ext.define('app.view.MeasurementsContainer', {
     alias: 'widget.measurements',
     requires: [
     	'app.view.MeasurementWeightContainer',
-    	'app.view.MeasurementNeckContainer'
+    	'app.view.MeasurementNeckContainer',
+		'app.view.MeasurementChestContainer',
+		'app.view.MeasurementWaistContainer',
+		'app.view.MeasurementButtocksContainer',
+		'app.view.MeasurementHipContainer',
+		'app.view.MeasurementCaviarContainer',
+		'app.view.MeasurementPelvisContainer',
+		'app.view.MeasurementBicepsContainer',
+		'app.view.MeasurementForearmContainer',
+    	'app.view.MeasurementShouldersContainer'
     ],
 	
     title: 'Замеры',
@@ -17,14 +26,14 @@ Ext.define('app.view.MeasurementsContainer', {
     items:[
     	{xtype: 'measurement-weight'},
     	{xtype: 'measurement-neck'},
-    	{title: 'Грудь'},
-    	{title: 'Талия'},
-    	{title: 'Ягодицы'},
-    	{title: 'Бедро'},
-    	{title: 'Икры'},
-    	{title: 'Таз'},
-    	{title: 'Бицепс'},
-		{title: 'Предплечье'},
-		{title: 'Плечи'}
+    	{xtype: 'measurement-chest'},
+    	{xtype: 'measurement-waist'},
+    	{xtype: 'measurement-buttocks'},
+    	{xtype: 'measurement-hip'},
+    	{xtype: 'measurement-caviar'},
+    	{xtype: 'measurement-pelvis'},
+    	{xtype: 'measurement-biceps'},
+		{xtype: 'measurement-forearm'},
+		{xtype: 'measurement-shoulders'}
 	]	
 })

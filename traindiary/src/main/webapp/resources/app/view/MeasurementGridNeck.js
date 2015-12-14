@@ -8,7 +8,7 @@ Ext.define('app.view.MeasurementGridNeck', {
     
     controller: 'measurement-grid',
     
-    id: 'measurementGridNeck',
+    id: 'measurementNeckGrid',
     store: {
     	type: 'measurement-neck'
     }

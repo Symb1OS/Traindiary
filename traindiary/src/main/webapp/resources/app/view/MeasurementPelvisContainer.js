@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementPelvisContainer', {
     requires: [
     	  	 'app.view.MeasurementPelvisGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataPelvisController'
+    	  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-pelvis',
+    controller: 'measurement-data',
     
     title: 'Таз',
     layout: 'border',

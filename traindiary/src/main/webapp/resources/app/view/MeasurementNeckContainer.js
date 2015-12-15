@@ -3,10 +3,10 @@ Ext.define('app.view.MeasurementNeckContainer', {
     alias: 'widget.measurement-neck',
     requires: [
     	  	 'app.view.MeasurementGridNeck',
-    	  	 'app.view.MeasurementDataNeck',
-    	  	 'app.controller.MeasurementDataNeckController'
+    	  	 'app.view.MeasurementData',
+    	  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-neck',
+    controller: 'measurement-data',
     
     title: 'Шея',
     layout: 'border',
@@ -17,7 +17,7 @@ Ext.define('app.view.MeasurementNeckContainer', {
     },
     items:[
     	{xtype : 'measurement-grid-neck'},
-    	{xtype : 'measurement-detail-neck'}
+    	{xtype : 'measurement-detail'}
     ]
 
 })

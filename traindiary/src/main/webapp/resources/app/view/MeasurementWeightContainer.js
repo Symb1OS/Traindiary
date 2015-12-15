@@ -3,10 +3,10 @@ Ext.define('app.view.MeasurementWeightContainer', {
     alias: 'widget.measurement-weight',
     requires: [
     	  	 'app.view.MeasurementGridWeight',
-    	  	 'app.view.MeasurementDataWeight',
-    	  	 'app.controller.MeasurementDataWeightController'
+    	  	 'app.view.MeasurementData',
+  		  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-weight',
+    controller: 'measurement-data',
     
     title: 'Вес',
     layout: 'border',
@@ -17,7 +17,7 @@ Ext.define('app.view.MeasurementWeightContainer', {
     },
     items:[
     	{xtype : 'measurement-grid-weight'},
-    	{xtype : 'measurement-detail-weight'}
+    	{xtype : 'measurement-detail'}
     ]
 
 })

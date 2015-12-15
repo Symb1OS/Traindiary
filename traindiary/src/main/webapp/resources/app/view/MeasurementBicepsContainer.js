@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementBicepsContainer', {
     requires: [
     	  	 'app.view.MeasurementBicepsGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataBicepsController'
+  		  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-biceps',
+    controller: 'measurement-data',
     
     title: 'Бицепс',
     layout: 'border',

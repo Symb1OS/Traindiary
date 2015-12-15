@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementHipContainer', {
     requires: [
     	  	 'app.view.MeasurementHipGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataHipController'
+  		  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-hip',
+    controller: 'measurement-data',
     
     title: 'Бедро',
     layout: 'border',

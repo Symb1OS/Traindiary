@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementWaistContainer', {
     requires: [
     	  	 'app.view.MeasurementWaistGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataWaistController'
+    	  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-waist',
+    controller: 'measurement-data',
     
     title: 'Талия',
     layout: 'border',

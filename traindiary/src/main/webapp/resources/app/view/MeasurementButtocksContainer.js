@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementButtocksContainer', {
     requires: [
     	  	 'app.view.MeasurementButtocksGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataButtocksController'
+  	 	  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-buttocks',
+    controller: 'measurement-data',
     
     title: 'Ягодицы',
     layout: 'border',

@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementShouldersContainer', {
     requires: [
     	  	 'app.view.MeasurementShouldersGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataShouldersController'
+		  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-shoulders',
+    controller: 'measurement-data',
     
     title: 'Плечи',
     layout: 'border',

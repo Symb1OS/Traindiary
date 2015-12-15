@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementCaviarContainer', {
     requires: [
     	  	 'app.view.MeasurementCaviarGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataCaviarController'
+	  	  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-caviar',
+    controller: 'measurement-data',
     
     title: 'Ягодицы',
     layout: 'border',

@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementForearmContainer', {
     requires: [
     	  	 'app.view.MeasurementForearmGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataForearmController'
+  		  	 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-forearm',
+    controller: 'measurement-data',
     
     title: 'Предплечье',
     layout: 'border',

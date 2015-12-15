@@ -4,9 +4,9 @@ Ext.define('app.view.MeasurementChestContainer', {
     requires: [
     	  	 'app.view.MeasurementChestGrid',
     	  	 'app.view.MeasurementData',
-    	  	 'app.controller.MeasurementDataChestController'
+	  		 'app.controller.MeasurementDataController'
     ],
-    controller: 'measurement-chest',
+    controller: 'measurement-data',
     
     title: 'Грудь',
     layout: 'border',

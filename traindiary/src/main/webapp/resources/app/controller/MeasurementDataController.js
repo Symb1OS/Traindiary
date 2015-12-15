@@ -1,6 +1,6 @@
-Ext.define('app.controller.MeasurementDataForearmController', {
+Ext.define('app.controller.MeasurementDataController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.measurement-forearm',
+    alias: 'controller.measurement-data',
     
     onSave : function(){
 	  	 var form = this.getView().getForm()
@@ -18,7 +18,7 @@ Ext.define('app.controller.MeasurementDataForearmController', {
 		     rec.set(keys[i], newValues[keys[i]]);
 		 }
 		  
-		 var grid = Ext.getCmp('measurementForearmGrid');
+		 var grid = this.getView().down('panel')
 		 var store = grid.getStore()
 
 		 store.sync({

@@ -2,7 +2,7 @@ Ext.define('app.view.MeasurementNeckContainer', {
     extend: 'Ext.form.Panel',
     alias: 'widget.measurement-neck',
     requires: [
-    	  	 'app.view.MeasurementGridNeck',
+    	  	 'app.view.MeasurementNeckGrid',
     	  	 'app.view.MeasurementData',
     	  	 'app.controller.MeasurementDataController'
     ],

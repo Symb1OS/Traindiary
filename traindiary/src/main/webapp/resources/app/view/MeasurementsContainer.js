@@ -15,7 +15,7 @@ Ext.define('app.view.MeasurementsContainer', {
     	'app.view.MeasurementShouldersContainer'
     ],
 	
-    title: 'Замеры',
+    title: 'Вес и объемы',
     scrollable: true,
     layout: 'accordion',
     height: 500,

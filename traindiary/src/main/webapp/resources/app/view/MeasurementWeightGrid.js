@@ -1,4 +1,4 @@
-Ext.define('app.view.MeasurementGridWeight', {
+Ext.define('app.view.MeasurementWeightGrid', {
     extend: 'app.view.MeasurementGrid',
     alias: 'widget.measurement-grid-weight',
     requires: [

@@ -1,4 +1,4 @@
-Ext.define('app.view.MeasurementGridNeck', {
+Ext.define('app.view.MeasurementNeckGrid', {
     extend: 'app.view.MeasurementGrid',
     alias: 'widget.measurement-grid-neck',
     requires: [

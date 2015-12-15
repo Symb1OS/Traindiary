@@ -101,22 +101,5 @@ public class UserService {
 	public void changePassword(User user){
 		userDao.changePassword(user);
 	}
-	
 
-	/** ---------	 Measurement ----------	*/
-	
-	public List<Measurement> getAllWeightMeasurement(String username) {
-		return 	measurementDao.getAllWeightMeasurement(username);
-	}
-
-	public void addWeightMeasurement(Measurement measurement) {
-		measurementDao.addWeightMeasurement(measurement);
-		
-	}
-
-	public void updateWeightMeasurement(Measurement measurement) {
-		measurementDao.updateWeightMeasurement(measurement);
-		
-	}
-	
 }

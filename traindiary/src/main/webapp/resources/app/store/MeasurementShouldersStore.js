@@ -13,7 +13,7 @@ Ext.define('app.store.MeasurementShouldersStore', {
 		reader: {
             type: 'json',
             idProperty: 'id',
-            rootProperty: 'weight'
+            rootProperty: 'shoulders'
         },
         writer: {
         	type: 'json',

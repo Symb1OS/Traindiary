@@ -1,11 +1,22 @@
 Ext.define('app.view.MeasurementGrid', {
     extend: 'Ext.grid.Panel',
+  /*  alias: 'widget.measurement-grid',
+    requires: [
+   	 'app.store.MeasurementStore'   
+    ,'app.controller.MeasurementGridController'
+    ],
     
+    controller: 'measurement-grid',
+    */
     title : 'Результаты',
     region: 'west',
     width: 310,
     frame: true,
     columnLines: true,
+    
+ /*   store: {
+    	type: 'measurement'
+    },*/
     
     columns:[
         { text: 'id', align: 'center', dataIndex: 'id', flex:1, hidden: true},

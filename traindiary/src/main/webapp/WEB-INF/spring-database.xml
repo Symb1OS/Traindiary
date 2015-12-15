@@ -46,6 +46,10 @@
 		<property name="measurementDao" ref="measurementDao"/>
 	</bean>
 	
+	<bean id="measurementService" class="ru.traindiary.service.MeasurementService">
+		<property name="measurementDao" ref="measurementDao"/>
+	</bean>
+	
 	<import resource="spring-beans.xml" />
 
 </beans>

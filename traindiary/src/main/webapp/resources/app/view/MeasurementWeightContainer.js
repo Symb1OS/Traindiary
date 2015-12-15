@@ -2,7 +2,7 @@ Ext.define('app.view.MeasurementWeightContainer', {
     extend: 'Ext.form.Panel',
     alias: 'widget.measurement-weight',
     requires: [
-    	  	 'app.view.MeasurementGridWeight',
+    	  	 'app.view.MeasurementWeightGrid',
     	  	 'app.view.MeasurementData',
   		  	 'app.controller.MeasurementDataController'
     ],

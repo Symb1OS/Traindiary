@@ -64,6 +64,11 @@ Ext.define('app.controller.SettingsController', {
 	    		form.reset();
 	    	}
 	 	}); 
-    }
+    },
+	
+	onValid : function(me, valid, eOpts ){
+    		var form = this.getView();
+    		form.down('#onSave').setDisabled(!valid)
+	}
     
 })

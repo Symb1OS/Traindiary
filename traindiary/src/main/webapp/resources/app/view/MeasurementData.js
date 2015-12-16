@@ -15,14 +15,19 @@ Ext.define('app.view.MeasurementData', {
 		{ xtype: 'textfield', fieldLabel: 'id', name: 'id', hidden: true},
      	{ xtype: 'textfield', fieldLabel: 'bodyPartId', name: 'bodyPartId', hidden: true},
     	{ xtype: 'textfield', fieldLabel: 'Пользователь', name: 'username',  hidden: true},
-    	{ xtype: 'datefield', fieldLabel: 'Дата', name: 'date', format:'Y-m-d'},
-    	{ xtype: 'numberfield', fieldLabel: 'Значение', name: 'val'}
+    	{ xtype: 'datefield', fieldLabel: 'Дата', name: 'date', submitFormat: 'Y-m-d', renderer: Ext.util.Format.dateRenderer('d.m.Y'),allowBlank: false},
+    	{ xtype: 'numberfield', fieldLabel: 'Значение', name: 'val', allowBlank: false}
     ],
     buttons:[
 	{
     	text: 'Сохранить',
-    	formBind: true,
+    	disabled: true,
+    	itemId:'onSave',
     	handler: 'onSave'
 	}
+    ],
+    listeners: [
+   	 	{validitychange: 'onValid'}
     ]
+    
 })

@@ -32,6 +32,16 @@ Ext.define('app.controller.MeasurementDataController', {
     onSelectToForm : function(combo, rec, idx){
     	var form = this.getView().getForm()
 		form.loadRecord(rec)
-    }
+    },
+    
+    onEnabledRemove: function(view, records){
+    	var grid = this.getView();
+		grid.down('#remove').setDisabled(!records.length);
+	},
+	
+	onValid : function(me, valid, eOpts ){
+    		var form = this.getView();
+    		form.down('#onSave').setDisabled(!valid)
+	}
 
 })

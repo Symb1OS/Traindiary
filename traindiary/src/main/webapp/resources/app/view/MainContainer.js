@@ -24,7 +24,6 @@ Ext.define('app.view.MainContainer', {
     },
     defaults: {
         textAlign: 'left',
-        glyph: 72,
         bodyPadding: 15
     },
     items: [{

@@ -43,18 +43,21 @@ Ext.define('app.view.PersonDataContainer', {
 	        	xtype: 'datefield',
 	        	fieldLabel: 'Дата рождения',
 	        	name: 'birthday',
-	        	//renderer: Ext.util.Format.dateRenderer('d-m-Y'),
+	        	renderer: Ext.util.Format.dateRenderer('d.m.Y'),
+	        	submitFormat: 'Y-m-d', 
 	        	type: 'date',
-	        	max: new Date(),
-	        	format:'Y-m-d'
+	        	max: new Date()
+	        	
 	       	}
 	        ],
             buttons: [
             	{
             		text: 'Сохранить',
-            		formBind: true,
-            		disabled: false,
+            		itemId:'onSave',
             		handler: 'onUpdateProfile'
           		} 
-            ]
+            ],
+		    listeners: [
+		   	 	{validitychange: 'onValid'}
+		    ]
 });

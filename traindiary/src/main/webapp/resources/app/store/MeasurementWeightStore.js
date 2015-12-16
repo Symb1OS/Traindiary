@@ -1,7 +1,7 @@
 Ext.define('app.store.MeasurementWeightStore', {
     extend: 'Ext.data.Store',
     alias: 'store.measurement-weight',
-    model: 'app.model.MeasurementWeightModel',
+    model: 'app.model.MeasurementModel',
     storeId: 'measurementWeightStore',
     autoLoad: true,
     proxy: new Ext.data.HttpProxy({

@@ -31,7 +31,13 @@ Ext.define('app.view.StatisticButtocksChart', {
                 fillOpacity: 0.6,
                 miterLimit: 3,
                 lineCap: 'miter'
-            }
+            },
+	        marker: {
+	            radius: 4
+	        },label: {
+	            field: 'val',
+	            display: 'over'
+	        }
         },
         axes: [{
             type: 'numeric',

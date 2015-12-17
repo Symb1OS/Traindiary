@@ -6,8 +6,10 @@ Ext.define('app.view.MainContainer', {
         'app.view.PersonDataContainer',
         'app.view.ChangePasswordContainer',
         'app.view.SettingsContainer',
-        'app.view.MeasurementsContainer'
+        'app.view.MeasurementsContainer',
+        'app.view.StatisticContainer'
     ],
+    
     frame: true,
     width: '70%',
     height: '100%',
@@ -37,14 +39,11 @@ Ext.define('app.view.MainContainer', {
         html: 'Каталог стандартных упражнений, а так же добавить возможность добавлять свои упражнения'
     }, 
     	{xtype: 'measurements'}, 
-    {
-        title: 'Статистика',
-        html: 'Куча аналитики по тренировкам и питанию, графики для наглядного  отображения прогресса и выгрузки отчетов'
-    }, 
+    	{xtype: 'statistic'}, 
     	{xtype: 'settings'}
     ],
      header: {
-        itemPosition: 1, // after title before collapse tool
+        itemPosition: 1, 
         items: [{
             ui: 'default-toolbar',
             xtype: 'button',

@@ -8,7 +8,7 @@ Ext.define('app.view.MeasurementCaviarContainer', {
     ],
     controller: 'measurement-data',
     
-    title: 'Ягодицы',
+    title: 'Икры',
     layout: 'border',
 	scrollable:true,
 	bodyPadding: 10,

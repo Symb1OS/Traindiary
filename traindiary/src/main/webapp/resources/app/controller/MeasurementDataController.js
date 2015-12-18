@@ -20,13 +20,9 @@ Ext.define('app.controller.MeasurementDataController', {
 		  
 		 var grid = this.getView().down('panel')
 		 var store = grid.getStore()
-
-		 store.sync({
-			success: function(){
-				 store.load()
-			}		 	
-		 })
-		 	
+		 
+	 	 store.sync()
+		
     },
     
     onSelectToForm : function(combo, rec, idx){

@@ -26,8 +26,7 @@ Ext.define('app.view.StatisticMeasurementContainer', {
         }
     },
     defaults:{
-    	margin: '0 10 0 0',
-		bodyPadding: 10
+    	margin: '0 1 0 0'
     },
     items:[
     	{xtype: 'statistic-weight'},

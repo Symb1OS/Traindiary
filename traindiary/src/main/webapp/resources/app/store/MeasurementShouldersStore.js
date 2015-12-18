@@ -6,14 +6,18 @@ Ext.define('app.store.MeasurementShouldersStore', {
     autoLoad: true,
     proxy: new Ext.data.HttpProxy({
     	api:{
-    		create:  'user/measurement/shoulders/add',
-    		update:  'user/measurement/shoulders/update',
-    		read  :  'user/measurement/shoulders/read'
+    		create:  'user/measurement/add',
+    		update:  'user/measurement/update',
+			destroy: 'user/measurement/delete',
+    		read  :  'user/measurement/read'
+    	},
+    	extraParams:{
+    		bodyPartId: 11
     	},
 		reader: {
             type: 'json',
             idProperty: 'id',
-            rootProperty: 'shoulders'
+            rootProperty: 'measurement'
         },
         writer: {
         	type: 'json',

@@ -25,6 +25,7 @@ public class Measurement{
 	public void setBodyPartId(BigInteger bodyPartId) {
 		this.bodyPartId = bodyPartId;
 	}
+	
 	public String getUsername() {
 		return username;
 	}

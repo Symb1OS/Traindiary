@@ -25,6 +25,7 @@ Ext.define('app.controller.MeasurementGridController', {
     	var sm = grid.getSelectionModel();
     	store.remove(sm.getSelection());
     	grid.getSelectionModel().select(0)
+    	store.sync();
     }
 
 })

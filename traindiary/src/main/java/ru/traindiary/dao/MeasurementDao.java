@@ -28,16 +28,16 @@ public class MeasurementDao implements MeasurementImpl{
 	@Override
 	public void updateMeasurement(Measurement measurement) {
 		jdbc.update(UPDATE_MEASUREMENT, new Object[]{measurement.getDate(),
-															measurement.getVal(),
-															measurement.getId()});
+										measurement.getVal(),
+										measurement.getId()});
 		
 	}
 
 	public void addMeasurement(Measurement measurement) {
 		jdbc.update(INSERT_MEASUREMENT, new Object[]{ measurement.getBodyPartId(),
-															measurement.getUsername(),			
-															measurement.getDate(),
-															measurement.getVal()});
+										measurement.getUsername(),			
+										measurement.getDate(),
+										measurement.getVal()});
 	}
 	
 	@Override
@@ -49,4 +49,5 @@ public class MeasurementDao implements MeasurementImpl{
 	public List<Measurement> getAllMeasurement(String username, String bodyPartId) {
 	 	return jdbc.query(SELECT_ALL_W_KEY, new Object[]{username, bodyPartId}, new MeasurementMapper());
 	}
+	
 }

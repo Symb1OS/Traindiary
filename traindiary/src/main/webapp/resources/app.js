@@ -3,5 +3,5 @@ Ext.application({
     appFolder: 'resources/app',
     launch: function() {
             Ext.create('app.view.MainViewport');
-        }
+    }
 });

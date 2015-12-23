@@ -1,5 +1,7 @@
 package ru.traindiary.dao;
 
+import java.util.List;
+
 import ru.traindiary.model.Measurement;
 
 public interface MeasurementImpl {
@@ -9,5 +11,6 @@ public interface MeasurementImpl {
 	public void updateMeasurement(Measurement measurement);
 	
 	public void deleteMeasurement(Measurement measurement);
-	
+
+	public List<Measurement> getAllMeasurement(String username, String bodyPartId);
 }

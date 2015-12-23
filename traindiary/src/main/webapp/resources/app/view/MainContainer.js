@@ -3,6 +3,7 @@ Ext.define('app.view.MainContainer', {
     alias: 'widget.mainContainer',
     title: 'Дневник тренировок',
     requires: [
+    	'app.view.TrainingContainer',
         'app.view.PersonDataContainer',
         'app.view.ChangePasswordContainer',
         'app.view.SettingsContainer',
@@ -31,10 +32,9 @@ Ext.define('app.view.MainContainer', {
     items: [{
         title: 'О дневнике',
         html: 'Сюда запилим красивую  презинтацию по функционалу'
-    }, {
-        title: 'Журнал тренировок',
-        html: 'Записи о тренировках(упражнения, подходы, веса)'
-    }, {
+    }, 
+    	{xtype: 'training'}, 
+    {
         title: 'Каталог упражнений',
         html: 'Каталог стандартных упражнений, а так же добавить возможность добавлять свои упражнения'
     }, 

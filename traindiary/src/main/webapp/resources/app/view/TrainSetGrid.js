@@ -3,22 +3,17 @@ Ext.define('app.view.TrainSetGrid', {
   
     alias: 'widget.training-set-grid',
     requires:[
-    	'app.model.TrainSetModel'
+    	'app.store.TrainSetStore'
     ],
 
     title: 'Подходы',
+    id: 'trainSetGrid',
     region: 'east',
-    width: 290,
+    width: 200,
     height: 400,
-    store:{
-    	model:'app.model.TrainSetModel',
-    	data:[
-   			[1,1,15,120],
-   			[2,1,15,120],
-			[3,1,15,120],
-			[4,1,15,120],
-			[5,1,15,120]
-        ]
+    
+    store: {
+    	type: 'training-set'
     },
  
     columns: [
@@ -34,11 +29,11 @@ Ext.define('app.view.TrainSetGrid', {
     },{
         text: 'Повторения',
         dataIndex: 'repeat',
-        width: 140
+        width: 100
     },{
         text: 'Вес',
         dataIndex: 'weight',
-        width: 140
+        width: 80
     }],
     
     tbar: [{

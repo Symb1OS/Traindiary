@@ -3,22 +3,19 @@ Ext.define('app.view.TrainExerciseGrid', {
   
     alias: 'widget.training-exercise-grid',
     requires:[
-   	 	'app.model.TrainExerciseModel'
+   	 	'app.store.TrainExerciseStore',
+   	 	'app.store.ExerciseStore'
     ],
 
+    id: 'trainExerciseGrid',
     title: 'Упражнения',
     frame: true,
     region: 'center',
     width: 400,
     height: 400,
     
-     store:{
-    	model:'app.model.TrainExerciseModel',
-    	data:[
-   			[1,1,1,'Присед','Тяжко пошло'],
-			[2,1,2,'Жим ногами','заебца пошло'],
-			[3,1,3,'Выпады','Умираем']
-        ]
+    store: {
+    	type: 'training-exercise'
     },
 
     columns: [
@@ -32,14 +29,27 @@ Ext.define('app.view.TrainExerciseGrid', {
 		dataIndex: 'trainingId',
         hidden: true
     },{
-        text: 'exerciseId',
+        text: 'Упражнениe',
         dataIndex: 'exerciseId',
-        flex: 1,
-        hidden: true
+        flex:1,
+        renderer: function(val){
+        	var store = Ext.getStore('exercise')
+        	for(var i = 0; i < store.getCount(); i++){
+        		var rec = store.getAt(i)
+        		var exId = rec.get('exerciseId')
+        		if (exId === val){
+        			return rec.get('name')
+        		}
+        	}
+        	return '';
+        }
     },{
-        width: 140,
-        text: 'Упражнение',
-        dataIndex: 'exerciseName'
+        xtype: 'combobox',
+        hidden:true,
+        store: {
+            type: 'exercise',
+            autoLoad: true
+        }
     },{
     	flex:1,
     	dataIndex: 'comment',
@@ -54,6 +64,19 @@ Ext.define('app.view.TrainExerciseGrid', {
         itemId:'remove',
         scale: 'small',
         disabled: true
-    }]
+    }],
+    
+    listeners: [
+	{
+    	select: function(grid, record, index, eOpts ){
+    		Ext.getCmp('trainSetGrid').getStore().load({
+    			params:{
+    				trainExerciseId : record.get('trainExerciseId')
+    			}
+    		})
+    		
+    	}
+	}
+    ]
 
 })

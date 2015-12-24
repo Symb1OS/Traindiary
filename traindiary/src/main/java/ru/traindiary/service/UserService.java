@@ -9,7 +9,6 @@ import ru.traindiary.dao.MeasurementDao;
 import ru.traindiary.dao.ProfileDao;
 import ru.traindiary.dao.UserDao;
 import ru.traindiary.dao.UserRolesDao;
-import ru.traindiary.model.Measurement;
 import ru.traindiary.model.Profile;
 import ru.traindiary.model.User;
 import ru.traindiary.model.UserRoles;

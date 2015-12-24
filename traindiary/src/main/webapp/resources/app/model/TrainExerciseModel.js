@@ -5,7 +5,6 @@ Ext.define('app.model.TrainExerciseModel', {
     		  {name: 'trainExerciseId', type : 'int'}, 
     		  {name: 'trainingId'},
     		  {name: 'exerciseId'}, 
-    		  {name: 'exerciseName'}, 
     		  {name: 'comment'}
     ]
     

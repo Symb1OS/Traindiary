@@ -39,6 +39,10 @@
 		<property name="jdbc" ref="jdbc" />
 	</bean>
 	
+	<bean id="trainingDao" class="ru.traindiary.dao.TrainingDao">
+		<property name="jdbc" ref="jdbc" />
+	</bean>
+	
 	<bean id="userService" class="ru.traindiary.service.UserService">
 		<property name="userDao" ref="userDao"/>
 		<property name="userRolesDao" ref="userRolesDao"/>
@@ -48,6 +52,10 @@
 	
 	<bean id="measurementService" class="ru.traindiary.service.MeasurementService">
 		<property name="measurementDao" ref="measurementDao"/>
+	</bean>
+	
+	<bean id="trainingService" class="ru.traindiary.service.TrainingService">
+		<property name="trainingDao" ref="trainingDao"/>	
 	</bean>
 	
 	<import resource="spring-beans.xml" />

@@ -17,6 +17,7 @@ public class TrainingMapper implements RowMapper<Training> {
 		training.setTrainingId(new BigInteger(rs.getString("TRAININGID")));
 		training.setUsername(rs.getString("USERNAME"));
 		training.setDate(rs.getDate("DATE"));
+		training.setDescription(rs.getString("DESCRIPTION"));
 		
 		return training;
 	}

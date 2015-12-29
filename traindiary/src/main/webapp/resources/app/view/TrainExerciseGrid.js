@@ -34,14 +34,8 @@ Ext.define('app.view.TrainExerciseGrid', {
         flex:1,
         renderer: function(val){
         	var store = Ext.getStore('exercise')
-        	for(var i = 0; i < store.getCount(); i++){
-        		var rec = store.getAt(i)
-        		var exId = rec.get('exerciseId')
-        		if (exId === val){
-        			return rec.get('name')
-        		}
-        	}
-        	return '';
+        	var rec = store.getById(val)
+        	return rec.get('name');
         }
     },{
         xtype: 'combobox',
@@ -53,12 +47,23 @@ Ext.define('app.view.TrainExerciseGrid', {
     },{
     	flex:1,
     	dataIndex: 'comment',
-    	text: 'Комментарий'
+    	text: 'Комментарий',
+    	hidden: true
+    }],
+    
+    plugins: [{
+        ptype: 'rowexpander',
+        pluginId:'expander',
+        rowBodyTpl : new Ext.XTemplate(
+        	'<P><b> Комментарий: </b>{comment}'
+        )
     }],
     
     tbar: [{
         text: 'Добавить',
-        scale: 'small'
+        itemId: 'exerciseAdd',
+        scale: 'small',
+        disabled: true
     }, {
         text: 'Удалить',
         itemId:'remove',
@@ -68,14 +73,8 @@ Ext.define('app.view.TrainExerciseGrid', {
     
     listeners: [
 	{
-    	select: function(grid, record, index, eOpts ){
-    		Ext.getCmp('trainSetGrid').getStore().load({
-    			params:{
-    				trainExerciseId : record.get('trainExerciseId')
-    			}
-    		})
-    		
-    	}
+    	select: 'onLoadSetStore',    	
+    	selectionchange : 'onLockExerciseRemoveListener'
 	}
     ]
 

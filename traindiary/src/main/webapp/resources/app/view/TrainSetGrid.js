@@ -33,17 +33,25 @@ Ext.define('app.view.TrainSetGrid', {
     },{
         text: 'Вес',
         dataIndex: 'weight',
-        width: 80
+        width: 75
     }],
     
     tbar: [{
         text: 'Добавить',
-        scale: 'small'
+        itemId:'setAdd',
+        scale: 'small',
+        disabled: true
     }, {
         text: 'Удалить',
         itemId:'remove',
         scale: 'small',
         disabled: true
-    }]
+    }],
+    
+    listeners: [
+	{
+    	selectionchange : 'onLockSetRemoveListener'
+	}
+    ]
 
 })

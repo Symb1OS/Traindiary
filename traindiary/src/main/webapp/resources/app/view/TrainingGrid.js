@@ -10,7 +10,7 @@ Ext.define('app.view.TrainingGrid', {
     id: 'trainingGrid',
     frame: true,
     region:'west',
-    width: 450,
+    width: 380,
     height: 400,
   
     store: {
@@ -27,10 +27,29 @@ Ext.define('app.view.TrainingGrid', {
         flex: 1,
         hidden: true
     },{
-        width: 450,
+        width: 120,
         text: 'Дата',
         dataIndex: 'date',
-        renderer: Ext.util.Format.dateRenderer('d.m.Y')
+        renderer: function(val, metaData, rec){
+	    	var description = rec.get('description');
+	    	if(description == 1){
+	    		  	return '<b>' + Ext.util.Format.date(val, 'd.m.Y') + '</b>'
+	    	}else{
+	    		return Ext.util.Format.date(val, 'd.m.Y')
+	    	}
+	    } 
+    },{
+        width: 210,
+        text: 'День недели',
+        dataIndex: 'date',
+        renderer: function(val, metaData, rec){
+	    	var description = rec.get('description');
+	    	if(description == 1){
+	    		  	return '<b>' + Ext.util.Format.date(val, 'l') + '</b>'
+	    	}else{
+	    		return Ext.util.Format.date(val, 'l')
+	    	}
+	    } 
     },{
     	width: 140,
     	dataIndex: 'description',
@@ -42,13 +61,14 @@ Ext.define('app.view.TrainingGrid', {
         ptype: 'rowexpander',
         pluginId:'expander',
         rowBodyTpl : new Ext.XTemplate(
-        	'{description}'
+        	//'{description}'
         )
     }],
 
     tbar: [
 	{
 		xtype: 'datefield',
+		width: 130,
 		id: 'trainingDate',
         text: 'Месяц',
         value: new Date(),
@@ -56,20 +76,8 @@ Ext.define('app.view.TrainingGrid', {
         scale: 'small',
         listeners: [
         {
-        	afterrender: function( grid, eOpts ){
-        		Ext.getStore('trainingStore').load()
-        	},
-        	
-        	change: function( trainingDate, newValue, oldValue, eOpts ){
-        		var date = Ext.Date.format(newValue,'Y-m-d')
-        		if (date != ''){
-        			Ext.getCmp('trainingGrid').getStore().load({
-	        			params: {
-	        				date : date
-	        			}
-        	   	    })
-        		}
-        	}
+        	afterrender: 'onLoadTrainingStore',
+        	change: 'onLoanTrainingMonth'
     	}
         ]
     },{
@@ -84,31 +92,14 @@ Ext.define('app.view.TrainingGrid', {
 				//TODO  загружаем все
 			}
     	}
-    },{
-    	xtype: 'button',
-    	text:'Скрыть/раскрыть',
-    	handler: function(){
-    	//	this.up('panel').getStore().load()
-    	}
     }],
     
     listeners: [
 	{
-    	select: function(grid, record, index, eOpts ){
-    		Ext.getCmp('trainExerciseGrid').getStore().load({
-    			params:{
-    				trainigId : record.get('trainingId')
-    			}
-    		})
-    		
-    		Ext.getCmp('trainSetGrid').getStore().load({
-    		 	params: {
-    		 		trainExerciseId : -1
-    		 	}
-    		})
-    		
-    	}
+    	select: 'onLoadStoreExercise',
+    	selectionchange : 'onUnlockAddExercise'
 	}
     ]
+    
 
 })

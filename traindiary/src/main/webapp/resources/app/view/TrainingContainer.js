@@ -3,8 +3,11 @@ Ext.define('app.view.TrainingContainer', {
     alias: 'widget.training',
     requires:[
     	'app.view.TrainingGrid',
-    	'app.view.TrainExerciseContainer'
+    	'app.view.TrainExerciseContainer',
+    	'app.controller.TrainingController'
     ],
+    
+    controller: 'training',
     
     title: 'Журнал тренировок',
     scrollable: true,

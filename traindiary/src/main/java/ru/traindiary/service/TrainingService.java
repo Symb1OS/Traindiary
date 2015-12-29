@@ -33,9 +33,20 @@ public class TrainingService {
 	
 	public List<Training>getFullTraining(String username, Date date){
 		
+		/**
+		 * Получаем Id всех тренировок  за месяц
+		 * Получем в цикле объект тренировок
+		 * Формируес поле  для экспандера
+		 * 
+		 * 
+		 * */
+		
+		
+		
 		Training training = new Training();
 		TrainingExercise trainingExercise = new TrainingExercise();
 		TrainingSet trainingSet = new TrainingSet();
+		
 		
 		return null;
 	}
